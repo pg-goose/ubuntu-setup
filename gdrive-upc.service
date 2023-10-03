@@ -1,0 +1,18 @@
+[Unit]
+Description=Mount pau.galopa.barroso gdrive mount
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+ExecStartPre=/usr/bin/mkdir -p /home/pau/upc-gdrive
+ExecStart= /usr/bin/rclone mount upc-gdrive:/vaults /home/pau/upc-gdrive \
+    --config=/home/pau/.config/rclone/rclone.conf \
+    --vfs-cache-mode full \
+    --vfs-cache-max-size 10G \
+    --log-level INFO \
+    --log-file /tmp/rclone.log
+ExecStop=/bin/fusermount -zu /home/pau/upc-gdrive
+
+[Install]
+WantedBy=default.target
