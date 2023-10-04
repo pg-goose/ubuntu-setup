@@ -5,14 +5,14 @@ Wants=network-online.target
 
 [Service]
 Type=notify
-ExecStartPre=/usr/bin/mkdir -p /home/pau/dev-gdrive
-ExecStart= /usr/bin/rclone mount dev-gdrive:/vaults /home/pau/dev-gdrive \
-    --config=/home/pau/.config/rclone/rclone.conf \
+ExecStartPre=/usr/bin/mkdir -p /home/pgalopa/dev-gdrive
+ExecStart= /usr/bin/rclone mount dev-gdrive:/vaults /home/pgalopa/dev-gdrive \
+    --config=/home/pgalopa/.config/rclone/rclone.conf \
     --vfs-cache-mode full \
     --vfs-cache-max-size 10G \
     --log-level INFO \
     --log-file /tmp/rclone.log
-ExecStop=/bin/fusermount -zu /home/pau/dev-gdrive
+ExecStop=/bin/fusermount -zu /home/pgalopa/dev-gdrive
 
 [Install]
 WantedBy=default.target
