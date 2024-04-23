@@ -1,0 +1,3 @@
+# Opens a new terminal window with two tabs that execute tt (task traker) and togo (todo list)
+## must install tt and togo (own)
+alias piveu="gnome-terminal --window -- bash -c \"gnome-terminal --tab -- bash -c 'tt -p piveu' && gnome-terminal --tab -- bash -c 'togo'\" && exit 0"
