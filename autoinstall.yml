@@ -4,6 +4,7 @@ autoinstall:
     id: ubuntu-desktop-minimal
   interactive-sections:
     - network
+    - keyboard
     - storage
   timezone: Europe/Madrid
   locale: es_ES
